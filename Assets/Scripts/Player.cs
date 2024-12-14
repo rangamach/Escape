@@ -10,8 +10,12 @@ public class Player : MonoBehaviour
     private Vector2 movement;
     private Vector3 rotation = new Vector3();
 
+    [HideInInspector]
+    public bool key_collected;
+
     private void Awake()
     {
+        key_collected = false;
         rotation = Vector3.zero;
     }
     void Update()
