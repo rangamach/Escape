@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class Key : MonoBehaviour
 {
-    private void OnTriggerEnter2D(Collider2D collision)
+
+    [SerializeField] Door door;
+    public void DoorAnimation()
     {
-        if(collision.GetComponent<Player>())
-        {
-            Player player = collision.GetComponent<Player>();
-            Debug.Log("Key - " + player.key_collected);
-            player.key_collected = true;
-            Debug.Log("Key - " + player.key_collected);
-            Destroy(this.gameObject);
-        }
+        door.GetComponent<Animator>().enabled = true;
+    }
+
+    public void DestoyKey()
+    {
+        Destroy(this.gameObject);
     }
 }

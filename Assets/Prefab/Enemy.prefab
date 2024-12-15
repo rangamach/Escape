@@ -166,10 +166,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 1133205170483120203}
-  speed: 2
-  waitTime: 2
+  speed: 3
+  waitTime: 1
   waypoints:
-  - {fileID: 0}
-  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
