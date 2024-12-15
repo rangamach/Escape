@@ -171,3 +171,4 @@ MonoBehaviour:
   waypoints:
   - {fileID: 0}
   - {fileID: 0}
+  aud: {fileID: 0}

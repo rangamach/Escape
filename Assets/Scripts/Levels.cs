@@ -24,11 +24,13 @@ public class Levels : MonoBehaviour
 
     private void Back()
     {
+        AudioManager.Instance.PlayAudioEffect(AudioTypes.ButtonClick);
         SceneManager.LoadScene(0);
     }
 
     private void LoadLevel(int level)
     {
+        AudioManager.Instance.PlayAudioEffect(AudioTypes.ButtonClick);
         SceneManager.LoadScene(level);
     }
 }

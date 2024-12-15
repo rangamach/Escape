@@ -22,6 +22,7 @@ public class Start : MonoBehaviour
 
     private void Exit()
     {
+        AudioManager.Instance.PlayAudioEffect(AudioTypes.ButtonClick);
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
 #else
@@ -31,6 +32,7 @@ public class Start : MonoBehaviour
 
     private void Load(int index)
     {
+        AudioManager.Instance.PlayAudioEffect(AudioTypes.ButtonClick);
         SceneManager.LoadScene(index);
     }
 }

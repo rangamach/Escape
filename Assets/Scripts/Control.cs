@@ -16,6 +16,7 @@ public class Control : MonoBehaviour
 
     private void Back()
     {
+        AudioManager.Instance.PlayAudioEffect(AudioTypes.ButtonClick);
         SceneManager.LoadScene(0);
     }
 }

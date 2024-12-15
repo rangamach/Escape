@@ -26,12 +26,17 @@ public class GameOver : MonoBehaviour
 
     private void LoadLevel(int index)
     {
+        AudioManager.Instance.PlayAudioEffect(AudioTypes.ButtonClick);
+        if(index != 3)
+            AudioManager.Instance.PlayAudioEffect(AudioTypes.Resume);
         Time.timeScale = 1;
         SceneManager.LoadScene(index);
     }
 
     private void Resume()
     {
+        AudioManager.Instance.PlayAudioEffect(AudioTypes.ButtonClick);
+        AudioManager.Instance.PlayAudioEffect(AudioTypes.Resume);
         Time.timeScale = 1;
         canvas.gameObject.SetActive(false);
     }

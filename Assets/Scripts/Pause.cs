@@ -32,12 +32,14 @@ public class Pause : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Escape))
         {
             Time.timeScale = 0;
+            AudioManager.Instance.PlayAudioEffect(AudioTypes.Pause);
             canvas_pause.gameObject.SetActive(true);
         }
     }
 
     private void LoadLevel(int index)
     {
+        AudioManager.Instance.PlayAudioEffect(AudioTypes.ButtonClick);
         Time.timeScale = 1;
         SceneManager.LoadScene(index);
     }
@@ -46,15 +48,18 @@ public class Pause : MonoBehaviour
     {
         Time.timeScale = 1;
         canvas_pause.gameObject.SetActive(false);
+        AudioManager.Instance.PlayAudioEffect(AudioTypes.Unpause);
     }
 
     public void EnableGameOverCanvas()
     {
+        AudioManager.Instance.PlayAudioEffect(AudioTypes.GameOver);
         canvas_go.gameObject.SetActive(true);
     }
 
     public void EnableLevelOverCanvas()
     {
+        AudioManager.Instance.PlayAudioEffect(AudioTypes.LevelComplete);
         canvas_lo.gameObject.SetActive(true);
     }
 }

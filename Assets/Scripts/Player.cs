@@ -16,6 +16,7 @@ public class Player : MonoBehaviour
 
     private void Awake()
     {
+        AudioManager.Instance.PlayAudioEffect(AudioTypes.Resume);
         rotation = Vector3.zero;
         collected_keys = 0;
         hud.UpdateText(0);
@@ -41,7 +42,7 @@ public class Player : MonoBehaviour
             //orients player correctly.
             rotation.y = 0f;
             gameObject.transform.eulerAngles = rotation;
-        }   
+        }  
     }
 
     void FixedUpdate()
@@ -54,8 +55,8 @@ public class Player : MonoBehaviour
     {
         if (collision.gameObject.GetComponent<Enemy>())
         {
-            Debug.Log("Gamr Over...");
             GetComponent<Pause>().EnableGameOverCanvas();
+            AudioManager.Instance.PlayAudioEffect(AudioTypes.EnemyHit);
             this.gameObject.SetActive(false);
         }
     }
@@ -64,8 +65,8 @@ public class Player : MonoBehaviour
     {
         if(collision.gameObject.GetComponent<Key>())
         {
-
             collected_keys++;
+            AudioManager.Instance.PlayAudioEffect(AudioTypes.Key);
             hud.UpdateText(collected_keys);
             Destroy(collision.gameObject);
             if (collected_keys == number_of_keys)

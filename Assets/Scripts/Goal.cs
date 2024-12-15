@@ -11,6 +11,7 @@ public class Goal : MonoBehaviour
             collision.gameObject.GetComponent<Animator>().SetFloat("Speed", 0.0f);
             collision.gameObject.GetComponent<Player>().enabled = false;
             collision.gameObject.GetComponent<Pause>().EnableLevelOverCanvas();
+            AudioManager.Instance.PlayAudioEffect(AudioTypes.LevelComplete);
         }
     }
 }

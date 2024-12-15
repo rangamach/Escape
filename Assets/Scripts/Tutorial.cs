@@ -37,6 +37,7 @@ public class Tutorial : MonoBehaviour
                 Destroy(this.gameObject);
             }
             cnt++;
+            AudioManager.Instance.PlayAudioEffect(AudioTypes.ButtonClick);
         }
     }
 
